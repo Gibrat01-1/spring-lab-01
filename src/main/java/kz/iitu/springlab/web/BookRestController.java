@@ -31,6 +31,14 @@ public class BookRestController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping(value = "/{id}/citation", produces = "text/plain")
+    public ResponseEntity<String> citation(@PathVariable long id) {
+        return service.findById(id)
+                .map(b -> ResponseEntity.ok(
+                        b.author() + " (" + b.year() + "). " + b.title() + "."))
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @PostMapping
     public ResponseEntity<Book> create(@RequestBody Book book) {
         Book saved = service.create(book);
@@ -55,3 +63,4 @@ public class BookRestController {
                 : ResponseEntity.notFound().build();
     }
 }
+
