@@ -1,0 +1,14 @@
+body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 0.4rem 0.6rem; text-align: left; }
+form label { display: block; margin-top: 0.8rem; font-weight: 600; }
+form input[type=text], form input[type=number], form select { width: 100%; padding: 0.4rem; box-sizing: border-box; }
+button { margin-top: 1rem; padding: 0.5rem 1.2rem; }
+
+.is-invalid { border: 2px solid #d93025 !important; }
+.error      { color: #d93025; font-size: 0.9rem; display: block; margin-bottom: 0.5rem; }
+.alert      { border: 1px solid #d93025; background: #fdecea; color: #b3261e; padding: 0.5rem 1rem; margin-bottom: 1rem; }
+.alert.success { border-color: #1e8e3e; background: #e6f4ea; color: #137333; }
+.tags       { display: flex; gap: 1rem; margin-bottom: 0.5rem; }
+.tags .tag  { display: inline; font-weight: normal; margin-top: 0; }
+.lang a     { text-decoration: none; }

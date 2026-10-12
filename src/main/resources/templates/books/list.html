@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Books</title>
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+</head>
+<body>
+<h1>Books</h1>
+
+<div class="alert success" th:if="${message}" th:text="${message}"></div>
+
+<p><a th:href="@{/books/new}">+ New book</a></p>
+
+<table>
+    <thead>
+    <tr><th>ID</th><th>Title</th><th>Author</th><th>Year</th></tr>
+    </thead>
+    <tbody>
+    <tr th:each="b : ${books}">
+        <td th:text="${b.id}"></td>
+        <td><a th:href="@{/books/{id}(id=${b.id})}" th:text="${b.title}"></a></td>
+        <td th:text="${b.author}"></td>
+        <td th:text="${b.year}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
